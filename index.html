@@ -6,8 +6,7 @@
   <title>Fingerpaint Fun</title>
 </head>
 <body>
-  <p>this space is bleak</p>
-  <p>use your fingers to make it vibrant</p>
+  <p class="para">this space is bleak <br> <br> use your fingers to make it vibrant</p>
   <canvas id="draw" height="800" width="800"></canvas>
 
   <style>
@@ -25,6 +24,26 @@
     }
   </style>
 
+  <script>
+    const para = document.querySelector('.para');
+    const canvas = document.querySelector('#draw');
+    const context = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = (window.innerHeight) - (para.height);
+    context.strokeStyle = '#bada55';
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.lineWidth = 100;
+
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    let hue = 0;
+    let direction = true;
+
+    
+  </script>
 
 </body>
 </html>
